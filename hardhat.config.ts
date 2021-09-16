@@ -1,5 +1,6 @@
 import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-web3"
+import "@nomiclabs/hardhat-etherscan";
 require("dotenv").config();
 
 module.exports = {

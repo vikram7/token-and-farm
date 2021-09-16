@@ -33,6 +33,12 @@ contract BbwlFarm {
             amount > 0 &&
             wethToken.balanceOf(msg.sender) >= amount, 
             "You cannot stake zero tokens");
+
+        require(
+            amount <= 3 ether && 
+            stakingBalance[msg.sender] + amount <= 3 ether,
+            "You cannot stake more than 3 ether"
+        );
             
         if(isStaking[msg.sender] == true){
             uint256 toTransfer = calculateYieldTotal(msg.sender);
